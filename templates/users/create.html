@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load i18n %}
+
+{% block title %}
+{% trans 'Registration' %}
+{% endblock %}
+
+{% block content %}
+
+<form method="post" class="form">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <input class="btn btn-primary" type="submit" value="{% trans 'Register' %}">
+</form>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+[
+    {
+      "model": "statuses.Status",
+      "pk": 1,
+      "fields": {
+        "name": "status 1",
+        "created_at": "2022-12-28 10:48:45.665412"
+      }
+    },
+    {
+      "model": "statuses.Status",
+      "pk": 2,
+      "fields": {
+        "name": "status 2",
+        "created_at": "2022-12-28 10:48:45.665412"
+      }
+    },
+    {
+      "model": "statuses.Status",
+      "pk": 3,
+      "fields": {
+        "name": "status 3",
+        "created_at": "2022-12-28 10:48:45.665412"
+      }
+    }
+  ]
+  

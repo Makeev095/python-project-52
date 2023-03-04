@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load i18n %}
+
+{% block title %}
+Delete status
+{% endblock %}
+
+{% block content %}
+<div class="container wrapper flex-grow-1">
+    <h1 class="my-4 mx-auto">
+
+    {{ title }}
+
+    </h1>
+
+ <form method="post" class="mx-auto">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <p>{% trans 'Are you sure you want to delete the status?' %} {{ object }}?</p>
+    {% bootstrap_form form %}
+    <input class="btn btn-danger" type="submit" value="{% trans 'Yes, delete' %}">
+</form>
+</div>
+{% endblock %}

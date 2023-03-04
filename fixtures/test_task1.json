@@ -1,0 +1,7 @@
+{
+    "name": "new task name",
+    "description": "new task description",
+    "status": 1,
+    "label": 1,
+    "executor": 1
+  }

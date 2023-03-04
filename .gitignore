@@ -1,0 +1,15 @@
+.idea
+.venv/
+venv/
+dist/
+__pycache__
+.pytest_cache/
+static/
+staticfiles
+var/
+x/
+.coverage
+coverage.xml
+*.log
+.env
+*.sqlite3

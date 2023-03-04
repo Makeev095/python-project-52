@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+{% trans "Labels" %}
+{% endblock %}
+
+{% block content %}
+<h1>{% trans "Labels" %}</h1>
+<a href="{% url 'create_label' %}">{% trans 'Create label' %}</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">{% trans "Name" %}</th>
+      <th scope="col">{% trans "Created at" %}</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for label in labels %}
+    <tr>
+      <td>{{ label.id }}</td>
+      <td>{{ label.name }}</td>
+      <td>{{ label.created_at }}</td>
+      <td>
+          <a href="{% url 'update_label' label.pk %}">{% trans 'Update' %}</a>
+          <br>
+          <a href="{% url 'delete_label' label.pk %}">{% trans 'Delete' %}</a>
+      </td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}
