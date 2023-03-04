@@ -23,7 +23,7 @@ DEBUG = bool(os.environ.get('DEBUG', True))
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://taskmanager-production.up.railway.app'
+    'https://python-project-52-production-8ef4.up.railway.app'
 ]
 # Application definition
 
