@@ -3,5 +3,3 @@
 
 
 python-project-52-production-8ef4.up.railway.app
-
-adv
