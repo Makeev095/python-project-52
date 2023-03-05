@@ -8,7 +8,7 @@ _Register, create, delete and edit tasks, labels and statuses, assign executors 
 
 # DEMO
 
-Just click and try to use DEMO on [Railway](https:/python-project-52-production-8ef4.up.railway.app)
+Just click and try to use DEMO on [Railway](https://python-project-52-production-8ef4.up.railway.app)
 
 P.S.: You will need to register to try all the features in demo.
 
