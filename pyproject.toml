@@ -37,6 +37,7 @@ urllib3 = "^1.26.14"
 djangorestframework = "^3.14.0"
 django-bootstrap4 = "^22.3"
 flake8 = "2.0"
+dj-database-url = "^1.2.0"
 
 
 [build-system]
