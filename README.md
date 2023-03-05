@@ -1,6 +1,12 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Makeev095/python-project-52/workflows/hexlet-check/badge.svg)](https://github.com/Makeev095/python-project-52/actions)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/322934cde33a7ada3f7d/maintainability)](https://codeclimate.com/github/Makeev095/python-project-52/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/322934cde33a7ada3f7d/test_coverage)](https://codeclimate.com/github/Makeev095/python-project-52/test_coverage)
+
+[![Django CI](https://github.com/Makeev095/python-project-52/workflows/CI/badge.svg)](https://github.com/Makeev095/python-project-52/actions)
+
 
 # Task Manager
 
