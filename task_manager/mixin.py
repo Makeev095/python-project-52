@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 
 
-class MyLoginRequiredMixin(LoginRequiredMixin):
+class AuthRequiredMixin(LoginRequiredMixin):
     def handle_no_permission(self):
         messages.error(self.request, _('You are not authorized! Please sign in.'))
         url = reverse_lazy('login')

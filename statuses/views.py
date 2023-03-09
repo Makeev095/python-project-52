@@ -9,7 +9,7 @@ from statuses.models import Status
 
 from django.shortcuts import render, redirect
 
-from task_manager.mixin import MyLoginRequiredMixin
+from task_manager.mixin import AuthRequiredMixin
 
 
 def index(request):
@@ -17,7 +17,7 @@ def index(request):
     return render(request, 'statuses/index.html', {'statuses': statuses})
 
 
-class CreateStatusView(SuccessMessageMixin, MyLoginRequiredMixin, CreateView):
+class CreateStatusView(SuccessMessageMixin, AuthRequiredMixin, CreateView):
     model = Status
     form_class = StatusForm
     template_name = 'statuses/create.html'
@@ -25,7 +25,7 @@ class CreateStatusView(SuccessMessageMixin, MyLoginRequiredMixin, CreateView):
     success_message = _('Status successfully created')
 
 
-class UpdateStatusView(SuccessMessageMixin, MyLoginRequiredMixin, UpdateView):
+class UpdateStatusView(SuccessMessageMixin, AuthRequiredMixin, UpdateView):
     model = Status
     form_class = StatusForm
     template_name = 'statuses/update.html'
@@ -33,7 +33,7 @@ class UpdateStatusView(SuccessMessageMixin, MyLoginRequiredMixin, UpdateView):
     success_message = _('Status successfully updated')
 
 
-class DeleteStatusView(SuccessMessageMixin, MyLoginRequiredMixin, DeleteView):
+class DeleteStatusView(SuccessMessageMixin, AuthRequiredMixin, DeleteView):
     model = Status
     template_name = 'statuses/delete.html'
     success_url = reverse_lazy('statuses')

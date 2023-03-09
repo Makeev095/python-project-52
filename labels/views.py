@@ -7,7 +7,7 @@ from labels.models import Label
 from django.shortcuts import render, redirect
 from django.utils.translation import gettext_lazy as _
 
-from task_manager.mixin import MyLoginRequiredMixin
+from task_manager.mixin import AuthRequiredMixin
 
 
 def index(request):
@@ -15,7 +15,7 @@ def index(request):
     return render(request, 'labels/index.html', {'labels': labels})
 
 
-class CreateLabelView(SuccessMessageMixin, MyLoginRequiredMixin, CreateView):
+class CreateLabelView(SuccessMessageMixin, AuthRequiredMixin, CreateView):
     model = Label
     form_class = LabelForm
     template_name = 'labels/create.html'
@@ -23,7 +23,7 @@ class CreateLabelView(SuccessMessageMixin, MyLoginRequiredMixin, CreateView):
     success_message = _('Label successfully created')
 
 
-class UpdateLabelView(SuccessMessageMixin, MyLoginRequiredMixin, UpdateView):
+class UpdateLabelView(SuccessMessageMixin, AuthRequiredMixin, UpdateView):
     model = Label
     form_class = LabelForm
     template_name = 'labels/update.html'
@@ -31,7 +31,7 @@ class UpdateLabelView(SuccessMessageMixin, MyLoginRequiredMixin, UpdateView):
     success_message = _('Label successfully updated')
 
 
-class DeleteLabelView(SuccessMessageMixin, MyLoginRequiredMixin, DeleteView):
+class DeleteLabelView(SuccessMessageMixin, AuthRequiredMixin, DeleteView):
     model = Label
     template_name = 'labels/delete.html'
     success_url = reverse_lazy('labels')
@@ -39,7 +39,7 @@ class DeleteLabelView(SuccessMessageMixin, MyLoginRequiredMixin, DeleteView):
 
     def post(self, request, *args, **kwargs):
         if self.get_object().task_set.count():
-            messages.warning(self.request,
+            messages.error(self.request,
                              _('It`s not possible to delete the label that is being used'))
             return redirect(self.success_url)
         return super().post(request, *args, **kwargs)
