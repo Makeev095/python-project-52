@@ -10,9 +10,10 @@ from django.utils.translation import gettext_lazy as _
 from task_manager.mixin import AuthRequiredMixin
 
 
-def index(request):
-    labels = Label.objects.all()
-    return render(request, 'labels/index.html', {'labels': labels})
+class LabelIndex():
+    def index(self, request):
+        labels = Label.objects.all()
+        return render(request, 'labels/index.html', {'labels': labels})
 
 
 class CreateLabelView(SuccessMessageMixin, AuthRequiredMixin, CreateView):

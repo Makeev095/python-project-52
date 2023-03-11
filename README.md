@@ -64,4 +64,4 @@ To use simple sqlite database use this record:
 Use this app in browser on http://localhost:8080
 
 ---
-Good Luck!!!
+Good Luck!
